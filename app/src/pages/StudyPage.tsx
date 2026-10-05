@@ -42,7 +42,7 @@ export default function StudyPage() {
           const requestedIndex = QUESTIONS.findIndex((question) => question.id === requestedQuestion)
           if (requestedIndex >= 0) setPosition(requestedIndex)
         } else if (source !== 'wrong' && storedPosition?.mode === mode) {
-          const storedIndex = queue.findIndex((question) => question.id === storedPosition.questionId)
+          const storedIndex = QUESTIONS.findIndex((question) => question.id === storedPosition.questionId)
           if (storedIndex >= 0) setPosition(storedIndex)
         }
         setRestored(true)
@@ -51,7 +51,7 @@ export default function StudyPage() {
     return () => {
       cancelled = true
     }
-  }, [mode, queue, repository, requestedQuestion, source])
+  }, [mode, repository, requestedQuestion, source])
 
   useEffect(() => {
     if (!current) return
@@ -164,5 +164,6 @@ export default function StudyPage() {
     </section>
   )
 }
+
 
 
