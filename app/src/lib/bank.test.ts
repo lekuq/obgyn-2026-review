@@ -5,6 +5,8 @@ import { validateBank } from './bank'
 const config: BankConfig = {
   bankId: 'sz-clinical-2026',
   title: '2026 深圳医师定期考核临床类别复习助手',
+  shortName: '??????',
+  scopeLabel: '2026 ??????',
   version: '2026.10.05',
   buildDate: '2026-10-05T00:00:00.000Z',
   questionCount: 1,

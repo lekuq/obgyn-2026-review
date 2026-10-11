@@ -1,0 +1,14 @@
+{
+  "bankId": "obgyn-2026",
+  "title": "2026 ???????",
+  "shortName": "??????",
+  "scopeLabel": "2026 ???",
+  "version": "2026.10.11",
+  "buildDate": "2026-10-11T00:00:00.000Z",
+  "questionCount": 499,
+  "examQuestionCount": 100,
+  "examDurationMinutes": 60,
+  "passScore": 60,
+  "primaryType": "single",
+  "disclaimer": "AI ???????????"
+}

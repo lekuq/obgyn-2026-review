@@ -1,8 +1,11 @@
-﻿import path from 'node:path'
+﻿import { readFileSync } from 'node:fs'
+import path from 'node:path'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { inspectAttr } from 'kimi-plugin-inspect-react'
+
+const bank = JSON.parse(readFileSync(path.resolve(__dirname, './src/generated/bank.json'), 'utf8'))
 
 export default defineConfig({
   base: './',
@@ -13,9 +16,9 @@ export default defineConfig({
       registerType: 'prompt',
       includeAssets: ['icons/icon-192.png', 'icons/icon-512.png'],
       manifest: {
-        name: '2026 深圳医师定期考核临床类别复习助手',
-        short_name: '临床刷题助手',
-        description: '2026 深圳医师定期考核临床类别复习、做题、模拟考试和错题回顾工具',
+        name: bank.title,
+        short_name: bank.shortName,
+        description: `${bank.scopeLabel}复习、做题、模拟考试和错题回顾工具`,
         lang: 'zh-CN',
         theme_color: '#0f766e',
         background_color: '#f8fafc',

@@ -1,12 +1,14 @@
 {
   "bankId": "sz-clinical-2026",
   "title": "2026 深圳医师定期考核临床类别复习助手",
-  "version": "2026.10.05",
+  "version": "2026.10.11",
   "buildDate": "2026-10-05T00:00:00.000Z",
   "questionCount": 500,
   "examQuestionCount": 100,
   "examDurationMinutes": 60,
   "passScore": 60,
   "primaryType": "single",
-  "disclaimer": "AI 辅助解析，仅供复习参考"
+  "disclaimer": "AI 辅助解析，仅供复习参考",
+  "shortName": "??????",
+  "scopeLabel": "2026 ??????"
 }

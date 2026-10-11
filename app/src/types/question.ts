@@ -21,6 +21,8 @@ export interface Question {
 export interface BankConfig {
   bankId: string
   title: string
+  shortName: string
+  scopeLabel: string
   version: string
   buildDate: string
   questionCount: number

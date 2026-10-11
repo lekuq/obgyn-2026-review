@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      BANK_ID: ${{ vars.BANK_ID || 'sz-clinical-2026' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -27,12 +29,15 @@ jobs:
       - name: Install dependencies
         working-directory: app
         run: npm ci
+      - name: Prepare question bank
+        working-directory: app
+        run: npm run prepare-bank -- --bank "$BANK_ID"
       - name: Run tests
         working-directory: app
         run: npm test
       - name: Build bank site
         working-directory: app
-        run: npm run build:bank -- --bank sz-clinical-2026
+        run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
